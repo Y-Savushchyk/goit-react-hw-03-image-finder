@@ -1,15 +1,31 @@
-import React from "react";
-const Searchbar = () => {
-  
+import React, { Component } from 'react';
+
+
+class Searchbar extends Component{
+
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   const form = e.currentTarget;
+  //   const SerchImgName = form.elements.name.value
+  //   form.reset()
+  //   console.log(SerchImgName);
+  //   return SerchImgName
+    
+  // }
+ 
+
+
+  render() {
     return (
-        <header className="Searchbar">
-  <form className="form">
-    <button type="submit" className="button">
-      <span className="button-label">Search</span>
+      <header className="searchbar">
+  <form className="form" onSubmit={this.handleSubmit}>
+    <button type="submit" className="button" >
+            <span className="button-label">Search</span>
     </button>
 
     <input
-      className="input"
+            className="input"
+            name='name'
       type="text"
       autoComplete="off"
       autoFocus
@@ -18,5 +34,8 @@ const Searchbar = () => {
   </form>
 </header>
     )
+  }
 }
+
+
 export default Searchbar
